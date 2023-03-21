@@ -11,7 +11,11 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
+require github.com/influxdata/influxdb-client-go/v2 v2.0.0-00010101000000-000000000000
+
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 )
+
+replace github.com/influxdata/influxdb-client-go/v2 => github.com/atticus-sullivan/influxdb-client-go/v2 v2.0.0-20230321225729-e8a6d0d4cc7a

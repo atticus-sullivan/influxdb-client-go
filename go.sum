@@ -1,3 +1,5 @@
+github.com/atticus-sullivan/influxdb-client-go/v2 v2.0.0-20230321225729-e8a6d0d4cc7a h1:sgDmny51W53uIf7+VPfxwmfQBL/NKhjT4DcIwqkv708=
+github.com/atticus-sullivan/influxdb-client-go/v2 v2.0.0-20230321225729-e8a6d0d4cc7a/go.mod h1:2F5k5Ak1tiGg1HrQiKq8TLQyWE91CvZkvzF/+FBa/nc=
 github.com/cyberdelia/templates v0.0.0-20141128023046-ca7fffd4298c/go.mod h1:GyV+0YP4qX0UQ7r2MoYZ+AvYDp12OF5yg4q8rGnyNh4=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
