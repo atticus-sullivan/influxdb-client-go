@@ -65,6 +65,9 @@ const (
 //		|> filter(fn: (r) => r._value > params.value)`
 //
 type QueryAPI interface {
+	// QueryCsv executes flux query on the InfluxDB server and returns the resulting http response containing annotated csv with table annotations according to dialect
+	// this can be used for streaming the query result
+	QueryCsv(ctx context.Context, query string, dialect *domain.Dialect) (http.Response, error)
 	// QueryRaw executes flux query on the InfluxDB server and returns complete query result as a string with table annotations according to dialect
 	QueryRaw(ctx context.Context, query string, dialect *domain.Dialect) (string, error)
 	// QueryRawWithParams executes flux parametrized query on the InfluxDB server and returns complete query result as a string with table annotations according to dialect
@@ -119,6 +122,46 @@ type queryBody struct {
 	Query   string           `json:"query"`
 	Type    domain.QueryType `json:"type"`
 	Params  interface{}      `json:"params,omitempty"`
+}
+
+func (q *queryAPI) QueryCsv(ctx context.Context, query string, dialect *domain.Dialect) (*http.Response, error) {
+	return q.QueryCsvWithParams(ctx, query, dialect, nil)
+}
+
+func (q *queryAPI) QueryCsvWithParams(ctx context.Context, query string, dialect *domain.Dialect, params interface{}) (*http.Response, error) {
+	if err := checkParamsType(params); err != nil {
+		return nil, err
+	}
+	queryURL, err := q.queryURL()
+	if err != nil {
+		return nil, err
+	}
+	qr := queryBody{
+		Query:   query,
+		Type:    domain.QueryTypeFlux,
+		Dialect: dialect,
+		Params:  params,
+	}
+	qrJSON, err := json.Marshal(qr)
+	if err != nil {
+		return nil, err
+	}
+	if log.Level() >= ilog.DebugLevel {
+		log.Debugf("Query: %s", qrJSON)
+	}
+	var response *http.Response
+	perror := q.httpService.DoPostRequest(ctx, queryURL, bytes.NewReader(qrJSON), func(req *http.Request) {
+		req.Header.Set("Content-Type", "application/json")
+		req.Header.Set("Accept-Encoding", "gzip")
+	},
+		func(resp *http.Response) error {
+			response = resp
+			return nil
+		})
+	if perror != nil {
+		return nil, perror
+	}
+	return response, nil
 }
 
 func (q *queryAPI) QueryRaw(ctx context.Context, query string, dialect *domain.Dialect) (string, error) {
