@@ -17,10 +17,10 @@ import (
 	"testing"
 	"time"
 
-	influxdb2 "github.com/influxdata/influxdb-client-go/v2"
-	"github.com/influxdata/influxdb-client-go/v2/domain"
-	"github.com/influxdata/influxdb-client-go/v2/internal/test"
-	"github.com/influxdata/influxdb-client-go/v2/log"
+	influxdb2 "github.com/atticus-sullivan/influxdb-client-go/v2"
+	"github.com/atticus-sullivan/influxdb-client-go/v2/domain"
+	"github.com/atticus-sullivan/influxdb-client-go/v2/internal/test"
+	"github.com/atticus-sullivan/influxdb-client-go/v2/log"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

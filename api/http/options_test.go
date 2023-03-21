@@ -11,7 +11,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/influxdata/influxdb-client-go/v2/api/http"
+	"github.com/atticus-sullivan/influxdb-client-go/v2/api/http"
 	"github.com/stretchr/testify/assert"
 )
 

@@ -14,11 +14,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/influxdata/influxdb-client-go/v2/api"
-	"github.com/influxdata/influxdb-client-go/v2/api/http"
-	"github.com/influxdata/influxdb-client-go/v2/domain"
+	"github.com/atticus-sullivan/influxdb-client-go/v2/api"
+	"github.com/atticus-sullivan/influxdb-client-go/v2/api/http"
+	"github.com/atticus-sullivan/influxdb-client-go/v2/domain"
 	ilog "github.com/atticus-sullivan/influxdb-client-go/v2/internal/log"
-	"github.com/influxdata/influxdb-client-go/v2/log"
+	"github.com/atticus-sullivan/influxdb-client-go/v2/log"
 )
 
 // Client provides API to communicate with InfluxDBServer.

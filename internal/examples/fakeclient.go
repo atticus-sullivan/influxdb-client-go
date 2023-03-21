@@ -8,8 +8,8 @@ package examples
 
 import (
 	"context"
-	"github.com/influxdata/influxdb-client-go/v2/api"
-	"github.com/influxdata/influxdb-client-go/v2/domain"
+	"github.com/atticus-sullivan/influxdb-client-go/v2/api"
+	"github.com/atticus-sullivan/influxdb-client-go/v2/domain"
 )
 
 // Options is fake options to satisfy Client interface

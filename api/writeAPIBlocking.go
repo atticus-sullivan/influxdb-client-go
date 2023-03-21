@@ -10,9 +10,9 @@ import (
 	"sync"
 	"sync/atomic"
 
-	http2 "github.com/influxdata/influxdb-client-go/v2/api/http"
-	"github.com/influxdata/influxdb-client-go/v2/api/write"
-	iwrite "github.com/influxdata/influxdb-client-go/v2/internal/write"
+	http2 "github.com/atticus-sullivan/influxdb-client-go/v2/api/http"
+	"github.com/atticus-sullivan/influxdb-client-go/v2/api/write"
+	iwrite "github.com/atticus-sullivan/influxdb-client-go/v2/internal/write"
 )
 
 // WriteAPIBlocking offers blocking methods for writing time series data synchronously into an InfluxDB server.
