@@ -67,7 +67,7 @@ const (
 type QueryAPI interface {
 	// QueryCsv executes flux query on the InfluxDB server and returns the resulting http response containing annotated csv with table annotations according to dialect
 	// this can be used for streaming the query result
-	QueryCsv(ctx context.Context, query string, dialect *domain.Dialect) (http.Response, error)
+	QueryCsv(ctx context.Context, query string, dialect *domain.Dialect) (*http.Response, error)
 	// QueryRaw executes flux query on the InfluxDB server and returns complete query result as a string with table annotations according to dialect
 	QueryRaw(ctx context.Context, query string, dialect *domain.Dialect) (string, error)
 	// QueryRawWithParams executes flux parametrized query on the InfluxDB server and returns complete query result as a string with table annotations according to dialect

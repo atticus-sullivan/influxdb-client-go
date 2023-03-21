@@ -18,8 +18,8 @@ import (
 
 	ihttp "github.com/influxdata/influxdb-client-go/v2/api/http"
 	"github.com/influxdata/influxdb-client-go/v2/domain"
-	http2 "github.com/influxdata/influxdb-client-go/v2/internal/http"
-	iwrite "github.com/influxdata/influxdb-client-go/v2/internal/write"
+	http2 "github.com/atticus-sullivan/influxdb-client-go/v2/internal/http"
+	iwrite "github.com/atticus-sullivan/influxdb-client-go/v2/internal/write"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
