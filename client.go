@@ -17,7 +17,7 @@ import (
 	"github.com/influxdata/influxdb-client-go/v2/api"
 	"github.com/influxdata/influxdb-client-go/v2/api/http"
 	"github.com/influxdata/influxdb-client-go/v2/domain"
-	ilog "github.com/influxdata/influxdb-client-go/v2/internal/log"
+	ilog "github.com/atticus-sullivan/influxdb-client-go/v2/internal/log"
 	"github.com/influxdata/influxdb-client-go/v2/log"
 )
 
